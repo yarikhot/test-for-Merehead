@@ -1,0 +1,43 @@
+.users {
+	width: 100%;
+	height: 100vh;
+	overflow-y: auto;
+	background-color: #F45C5E;
+	&__item {
+		display: flex;
+		flex-direction: column;
+		margin: 10px;
+		border: 1px solid $silver-2;
+		background-color: $silver;
+		padding: 10px;
+	}
+	&__name {
+		color: $black;
+		font-family: $opensans;
+		font-size: 22px;
+		font-weight: $regular;
+		line-height: 50px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 100%;
+	}
+	&__text {
+		color: $silver-2;
+		font-family: $opensans;
+		font-size: 14px;
+		font-weight: $regular;
+	}
+	&__list {
+		display: flex;
+		justify-content: center;
+		padding: 15px 0;
+	}
+	&__link {
+		padding: 0 15px;
+		font-size: 25px;
+		font-family: $opensans;
+		font-weight: $regular;
+		cursor: pointer;
+	}
+}
+
