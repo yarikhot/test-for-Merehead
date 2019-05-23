@@ -1,15 +1,12 @@
-import {createStore, applyMiddleware} from 'redux';
-import reducer from './reducer';
+import { applyMiddleware, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import promise from 'redux-promise';
-import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import reducer from './reducer';
 
 const state = {
-    users: []
+  arrival: [],
+  departure: [],
 };
 
-
-export default createStore(
-    reducer,
-    state,
-    applyMiddleware(promise, logger)
-);
+export default createStore(reducer, state, composeWithDevTools(applyMiddleware(promise, thunk)));

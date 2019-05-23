@@ -1,26 +1,19 @@
-import Axios from "axios";
+import axios from 'axios';
 
-export const GET_USERS = 'GET_USERS';
+export const GET_DATA = 'GET_DATA';
+export const SEARCH_DATA = 'SEARCH_DATA';
 
-export function getUsers() {
-
-    // Axios.defaults.headers.common = {
-    //     'Access-Control-Allow-Origin': '*',
-    //     'Content-Type': 'application/json',
-    //     'Accept': 'application/json',
-    //     'Access-Control-Allow-Methods': 'POST, PUT, GET, OPTIONS',
-    //     'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-    //     'Access-Control-Allow-Credentials': 'true'
-    // };
-
-    return Axios.get('https://cors-anywhere.herokuapp.com/http://dev.frevend.com/json/users.json')
-        .then(response => response.data)
-        .then(data => ({
-            type: GET_USERS,
-            users: data.users
-        }))
-        .catch(err => {
-
-        });
-
+export function getData({ date, search }) {
+  return axios
+    .get(`https://api.iev.aero/api/flights/${date}`)
+    .then(response => response.data)
+    .then(data => ({
+      type: GET_DATA,
+      arrival: data.body.arrival,
+      departure: data.body.departure,
+      search: search,
+    }))
+    .catch(err => {
+      console.error(err);
+    });
 }

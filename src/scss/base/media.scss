@@ -1,0 +1,157 @@
+@media (max-width: $tablet-landscape-width) {
+    .header {
+        &__logo {
+            padding-left: 0;
+        }
+
+        &__img {
+            height: 50px;
+        }
+    }
+}
+
+@media (max-width: $tablet-portrait-width) {
+    .header {
+        height: 50px;
+
+        &__nav {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $phone-landscape-width) {
+    .table {
+        &__center {
+            .text {
+                display: none;
+            }
+
+            .arrow {
+                display: block;
+                padding: 0 15px;
+            }
+        }
+
+        &__visible {
+            visibility: visible;
+            border: none;
+        }
+    }
+
+    .footer {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+
+        &__title {
+            border-bottom: 1px solid #fff;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .border-none {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 662px) {
+    .container {
+        padding: 0;
+    }
+
+    .table {
+        &__head {
+            display: none;
+        }
+
+        tr {
+            height: auto;
+        }
+
+        &__row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__center {
+            width: calc(100%/3);
+        }
+
+        &__center:nth-child(1) {
+            display: none;
+        }
+
+        &__code {
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: $regular;
+            color: #95989a;
+        }
+    }
+
+    .search {
+        margin-top: 80px;
+
+        &__title {
+            font-size: 50px;
+        }
+
+        &__input {
+            height: 50px;
+            font-size: 14px;
+            border-radius: 0;
+        }
+
+        &__btn {
+            display: none;
+        }
+
+        i {
+            font-size: 20px;
+        }
+    }
+
+    .tickets {
+        &__tab {
+            border-radius: 0;
+            height: 45px;
+        }
+
+        &__btn:first-child {
+            border-radius: 0 50px 0 0;
+        }
+
+        &__btn:last-child {
+            border-radius: 50px 0 0 0;
+        }
+
+        &__btn {
+            height: 45px;
+            font-size: 18px;
+            padding: 0 25px;
+        }
+
+        &__data-group {
+            margin: 0;
+        }
+        &__data-picker {
+            padding: 0 10px;
+        }
+    }
+}
+
+@media (min-width: $tablet-portrait-width) {
+    .header {
+        &__menu {
+            display: none;
+        }
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
